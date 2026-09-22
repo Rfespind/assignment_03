@@ -1,6 +1,8 @@
-Write your reflection here.
-
-See reflection.md for what makes a good reflection — be specific, use the
-terminology from this assignment (rerun, widget, return value, guard, bytes vs.
-text, decode, session state, initialise once, button-triggered, metric), and make
-it actionable.
+I learned that a Streamlit script reruns top to bottom on every interaction, so in one_package.py and process_file.py the work has to sit behind a guard, 
+because st.text_input returns "" and st.file_uploader returns None before any input. 
+In process_file.py I also learned that an upload arrives as bytes and has to be decoded to text, 
+and I fixed mistakes like importing the private _parse_item instead of parse_packaging and hard-coding the JSON path instead of building it from uploaded_file.name. 
+process_files.py was the hardest part: normal variables reset on every rerun, so the counts live in st.session_state, 
+initialised once and updated only when the button is clicked, since st.button is True only on the rerun its click caused. 
+I still need practice with positional vs. keyword arguments (like key=) and with planning where state is initialised, updated and displayed, 
+so next I'll rebuild the 2-counter-session.py pattern from memory to practice it.

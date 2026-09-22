@@ -44,7 +44,7 @@ package_data = st.text_input(
 # call and what to store it in; the second app will describe the steps and leave the
 # calls to you; the third gives you neither.
 
-# TODO: guard the work — an `if` on package_data, so that nothing below runs while
+# TOD: guard the work — an `if` on package_data, so that nothing below runs while
 #       the text box is empty. Everything that follows is indented inside it.
 if package_data != "":
     package = parse_packaging(package_data)
